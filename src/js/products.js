@@ -4,6 +4,16 @@ import { Modal } from "./modal.js";
 let productsList = document.querySelector("#products-list");
 
 export function renderProducts() {
+//Rueda de carga
+productsList.innerHTML = `
+  <div class = "d-flex justify-content-center my-5">
+    <div class = "spinner-border text-dark" role="status">
+      <span class = "visually-hidden">Cargando...</span>
+    </div>
+    <p>Cargando productos...</p>
+  </div>
+`;
+
   getProducts().then((products) => {
     let template = "";
     products.forEach((p) => {
@@ -16,13 +26,14 @@ export function renderProducts() {
                     <p class="card-text fw-bold">$${p.price}</p>
                 </div>
                 <div class= "mb-3">
-                  <button class="btn btn-dark" id="btn-${p.id}">Detalles</button>
+                  <button class="btn btn-dark" id="btn-${p.id}" >Detalles</button>
                 </div>
             </div>
         </div>
             `;
     });
 
+  
     productsList.innerHTML = template;
 
     //Eventos botones
@@ -32,5 +43,11 @@ export function renderProducts() {
         Modal(p);
       });
     });
+  })
+      //Manejo de errores
+  .catch((error)=>{
+    productsList.innerHTML = `<p class = "text-center text-danger">Error al cargar los productos</p>`;
+    console.error(error);
   });
+  
 }
