@@ -1,0 +1,30 @@
+/* Sombra sutil para despegar el navbar del fondo */
+.navbar {
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.category-btn {
+    transition: all 0.3s ease;
+    font-weight: 400;
+}
+
+.category-btn:hover {
+    background-color: var(--color-accent) !important;
+    border-color: var(--color-accent) !important;
+    color: var(--color-white) !important;
+    transform: translateY(-2px);
+}
+
+.category-btn.btn-dark {
+    background-color: var(--color-dark);
+    border-color: var(--color-dark);
+}
+
+#btn-open-cart {
+    font-weight: 600;
+    transition: transform 0.2s ease;
+}
+
+#btn-open-cart:hover {
+    transform: scale(1.05);
+}
