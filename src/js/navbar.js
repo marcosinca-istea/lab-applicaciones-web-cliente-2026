@@ -1,5 +1,6 @@
 import { getProducts } from "./api.js";
 import { renderProducts } from "./products.js";
+import { initCartEvents } from "./cart.js";
 
 let allProducts = [];
 
@@ -10,7 +11,7 @@ export const renderNavbar = () => {
         <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
             <div class="container-fluid">
                 <a class="navbar-brand d-flex align-items-center" href="#">
-                    <img src="./src/assets/logo.jpeg" alt="Scorpion Logo" width="30" height="30" class="d-inline-block align-text-top me-2" onerror="this.style.display='none'">
+                    <img src="./src/assets/Logo.png" alt="Scorpion Logo" width="30" height="30" class="d-inline-block align-text-top me-2" onerror="this.style.display='none'">
                     Scorpion
                 </a>
                 
@@ -22,16 +23,28 @@ export const renderNavbar = () => {
                     <!-- Buscador -->
                     <form class="d-flex mx-auto w-50 my-2 my-lg-0" id="search-form" aria-label="Buscar productos">
                         <input class="form-control me-2" type="search" placeholder="Buscar productos..." id="search-input" aria-label="Campo de búsqueda">
-                        <button class="btn btn-outline-light" type="submit">🔍</button>
+                        <button class="btn btn-outline-light" type="submit"><img src="./src/assets/search.png" alt="Buscar" class="me-2"></button>
                     </form>
                     
-                    <!-- Botón del Carrito (Para Agustina/Grisel) -->
-                    <button class="btn btn-warning ms-lg-3" id="btn-open-cart">
-                        🛒 Carrito <span class="badge bg-danger rounded-pill" id="cart-badge">0</span>
+            <!-- Botón del Carrito -->
+                    <button class="btn-cart" id="btn-open-cart">
+                        <img src="./src/assets/cart.png" alt="Carrito" class="me-2">
+                        <span class="cart-counter" id="cart-badge">0</span>
                     </button>
                 </div>
             </div>
         </nav>
+
+        <!-- Sidebar del Carrito -->
+        <aside class="mi-carrito primary-cart" id="primary-cart" data-visible="false">
+            <div class="cart-header">
+                <h2>CARRITO</h2>
+                <button class="cart-btn-cerrar" id="btn-close-cart" aria-label="Cerrar carrito">
+                    <img src="./src/assets/close.svg" alt="Cerrar">
+                </button>
+            </div>
+            <ul class="lista-carrito"></ul>
+        </aside>
 
         <!-- Navegación por Categorías (Diseño UI de píldoras) -->
         <div class="container mt-4 mb-2">
@@ -46,6 +59,7 @@ export const renderNavbar = () => {
     `;
 
     initLogic();
+    initCartEvents();
 };
 
 const initLogic = async () => {

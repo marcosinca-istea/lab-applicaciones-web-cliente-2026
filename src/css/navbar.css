@@ -20,11 +20,34 @@
     border-color: var(--color-dark);
 }
 
-#btn-open-cart {
-    font-weight: 600;
-    transition: transform 0.2s ease;
+.btn-cart {
+    background-color: transparent;
+    color: var(--color-white);
+    border-radius: 20px;
+    padding: 0.5rem 1rem;
+    border: none;
 }
 
-#btn-open-cart:hover {
-    transform: scale(1.05);
+.cart-counter {
+    background-color: var(--color-accent);
+    color: var(--color-white);
+    border-radius: 50%;
+    padding: 0.1rem 0.4rem;
+    font-size: 0.60rem;
+    font-weight: 600;
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    transform: translate(50%, -50%);
+}
+
+
+.btn-outline-light {
+    padding: 0;
+    border: none;
+}
+
+.btn-outline-light:hover {
+    outline: 1px solid var(--color-light);
+    background-color: transparent;
 }
