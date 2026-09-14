@@ -44,6 +44,15 @@ export const renderNavbar = () => {
                 </button>
             </div>
             <ul class="lista-carrito"></ul>
+
+            <div class="cart-footer border-top pt-3 mt-auto">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <span class="fs-5">Total:</span>
+                    <span class="fw-bold fs-5" id="cart-total">$0.00</span>
+                </div>
+                <button class="btn btn-dark w-100 rounded-pill py-2" id="btn-checkout">Finalizar Compra</button>
+                <button class="btn btn-clear-cart w-100 rounded-pill py-2 mt-2" id="btn-clear-cart">Eliminar productos</button>
+            </div>
         </aside>
 
         <!-- Navegación por Categorías (Diseño UI de píldoras) -->
