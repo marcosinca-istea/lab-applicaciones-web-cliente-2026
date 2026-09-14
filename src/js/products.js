@@ -15,18 +15,19 @@ productsList.innerHTML = `
 `;
 
   getProducts().then((products) => {
+    console.log(products[0]);
     let template = "";
     products.forEach((p) => {
       template += `
-        <div class="col">
-            <div class="card justify-content-center align-items-center" style ="width: 300px;">
+        <div class="col" data-category="${p.category}">
+            <div class="card product-card justify-content-center align-items-center">
                 <img src="${p.image}" class="card-img-top" alt="${p.title}" style="height: 300px; width: 250px; object-fit: contain;">
                 <div class="card-body" style ="width: 300px;">
                     <h5 class="card-title text-truncate">${p.title}</h5>
-                    <p class="card-text fw-bold">$${p.price}</p>
+                    <p class="card-text">$${p.price}</p>
                 </div>
                 <div class= "mb-3">
-                  <button class="btn btn-dark" id="btn-${p.id}" >Detalles</button>
+                  <button class="btn btn-dark rounded-pill px-4" id="btn-${p.id}" >Detalles</button>
                 </div>
             </div>
         </div>

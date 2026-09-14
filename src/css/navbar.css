@@ -26,6 +26,7 @@
     border-radius: 20px;
     padding: 0.5rem 1rem;
     border: none;
+    position: relative;
 }
 
 .cart-counter {
@@ -36,8 +37,8 @@
     font-size: 0.60rem;
     font-weight: 600;
     position: absolute;
-    top: 20px;
-    right: 35px;
+    top: 10px;
+    right: 25px;
     transform: translate(50%, -50%);
 }
 
