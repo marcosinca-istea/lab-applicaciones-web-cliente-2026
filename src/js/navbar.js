@@ -26,10 +26,8 @@ export const renderNavbar = () => {
                     </form>
                     
                     <button class="btn-cart" id="btn-open-cart">
-                        <span class="cart-icon-wrapper">
-                            <img src="./src/assets/cart.png" alt="Carrito" class="me-2">
-                            <span class="cart-counter" id="cart-badge">0</span>
-                        </span>
+                        <img src="./src/assets/cart.png" alt="Carrito" class="me-2">
+                        <span class="cart-counter" id="cart-badge">0</span>                        
                     </button>
                 </div>
             </div>
