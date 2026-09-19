@@ -4,7 +4,7 @@ export function Modal(prod) {
   let container = document.querySelector("#productModal");
 
   let template = `
-    <div class="modal-dialog">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
     <div class="modal-content">
       <div class="modal-header">
         <h1 class="modal-title fs-5" id="exampleModalLabel">${prod.title}</h1>
@@ -12,8 +12,8 @@ export function Modal(prod) {
       </div>
       <div class="modal-body">
         <div class="row">
-            <div class="col-md-6">
-                <img src="${prod.image}" class="img-fluid" alt= "${prod.title}">
+            <div class="col-md-6 text-center pb-3 pb-md-0 pe-md-3">
+                <img src="${prod.image}" class="img-fluid modal-image" alt= "${prod.title}">
             </div>
             <div class="col-md-6">
                 <p>${prod.description}</p>

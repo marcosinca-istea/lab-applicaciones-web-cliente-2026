@@ -27,7 +27,7 @@ export function renderProducts(products) {
     template += `
       <div class="col" data-category="${p.category}">
           <div class="card product-card justify-content-center align-items-center h-100">
-              <img src="${p.image}" class="card-img-top p-3" alt="${p.title}" style="height: 250px; width: 100%; object-fit: contain;">
+              <img src="${p.image}" class="card-img-top product-image" alt="${p.title}">
               <div class="card-body w-100 d-flex flex-column">
                   <h5 class="card-title text-truncate" title="${p.title}">${p.title}</h5>
                   <p class="card-text fw-bold mt-auto">$${p.price}</p>

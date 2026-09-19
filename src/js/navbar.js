@@ -26,8 +26,10 @@ export const renderNavbar = () => {
                     </form>
                     
                     <button class="btn-cart" id="btn-open-cart">
-                        <img src="./src/assets/cart.png" alt="Carrito" class="me-2">
-                        <span class="cart-counter" id="cart-badge">0</span>
+                        <span class="cart-icon-wrapper">
+                            <img src="./src/assets/cart.png" alt="Carrito" class="me-2">
+                            <span class="cart-counter" id="cart-badge">0</span>
+                        </span>
                     </button>
                 </div>
             </div>
@@ -68,11 +70,20 @@ export const renderNavbar = () => {
 };
 
 const initLogic = async () => {
-    showSpinner();
+    const spinnerTimeout = setTimeout(() => {
+        showSpinner();
+    }, 300);
     
-    allProducts = await getProducts();
-    
-    renderProducts(allProducts);
+    try {
+        allProducts = await getProducts();
+        clearTimeout(spinnerTimeout);
+        renderProducts(allProducts);
+    } catch (error) {
+        console.error(error);
+        document.getElementById('products-list').innerHTML = 
+            `<p class="text-center text-danger w-100 mt-5">Error al cargar los productos</p>`;
+        return;
+    }
 
     const searchInput = document.getElementById('search-input');
     const searchForm = document.getElementById('search-form');
