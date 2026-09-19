@@ -7,10 +7,15 @@
     --color-white: #FFFFFF;
     --primary-font: 'Outfit', sans-serif;
 }
-
 body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
     font-family: var(--primary-font);
     background-color: var(--color-light);
     color: var(--color-dark);
+}
+main {
+    flex: 1;
 }
 
