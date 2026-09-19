@@ -24,7 +24,6 @@ export function Modal(prod) {
         </div>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary rounded-pill" data-bs-dismiss="modal">Cerrar</button>
         <button type="button" class="btn btn-accent rounded-pill" id="add-to-cart-modal">Agregar al carrito</button>
       </div>
     </div>
