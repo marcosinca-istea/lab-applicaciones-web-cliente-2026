@@ -3,9 +3,9 @@
 Proyecto integrador para la materia **Laboratorio de Aplicaciones Web Cliente**. Es un e-commerce dinámico que consume una API de productos e incluye un carrito de compras funcional con Local Storage.
 
 **Integrantes y Tareas**
-* **Grisel Mauri:** Estructura de la grilla de productos, modales de detalle y estilos generales.
-* **Agustina Da Cruz Calca:** Lógica del carrito de compras, contador, localstorage y estilos generales.
-* **Marcos Inca:** Buscador, navegación por categorías y estilos generales.
+* **Grisel Mauri:** Estructura de la grilla de productos, modales de detalle, estructura responsive y estilos generales.
+* **Agustina Da Cruz Calca:** Lógica del carrito de compras, contador, localstorage, estructura responsive y estilos generales.
+* **Marcos Inca:** Buscador, navegación por categorías, estructura responsive y estilos generales.
 
 **Tecnologías Utilizadas**
 * HTML5 y CSS3
