@@ -15,20 +15,21 @@ export const renderNavbar = () => {
                     Scorpion
                 </a>
                 
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+                <div class="d-flex align-items-center ms-auto ms-lg-0 order-lg-last">
+                    <button class="btn-cart me-2 me-lg-0" id="btn-open-cart">
+                        <img src="./src/assets/cart.svg" alt="Carrito" class="me-2">
+                        <span class="cart-counter" id="cart-badge">0</span>                        
+                    </button>
+
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </div>
                 
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <form class="d-flex mx-auto w-50 my-2 my-lg-0" id="search-form" aria-label="Buscar productos">
-                        <input class="form-control me-2" type="search" placeholder="Buscar productos..." id="search-input" aria-label="Campo de búsqueda">
-                        <button class="btn btn-outline-light" type="submit"><img src="./src/assets/search.png" alt="Buscar" class="me-2"></button>
+                        <input class="form-control me-2" type="search" placeholder="Buscar productos..." id="search-input" aria-label="Campo de búsqueda">class="me-2"></button>
                     </form>
-                    
-                    <button class="btn-cart" id="btn-open-cart">
-                        <img src="./src/assets/cart.png" alt="Carrito" class="me-2">
-                        <span class="cart-counter" id="cart-badge">0</span>                        
-                    </button>
                 </div>
             </div>
         </nav>
