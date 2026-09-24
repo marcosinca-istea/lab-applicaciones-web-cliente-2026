@@ -8,28 +8,31 @@ export const renderNavbar = () => {
     const navbarContainer = document.getElementById('navbar-container');
     
     navbarContainer.innerHTML = `
-        <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
+        <nav class="navbar navbar-dark bg-dark py-2">
             <div class="container-fluid">
-                <a class="navbar-brand d-flex align-items-center" href="#">
-                    <img src="./src/assets/Logo.png" alt="Scorpion Logo" width="30" height="30" class="d-inline-block align-text-top me-2" onerror="this.style.display='none'">
-                    Scorpion
-                </a>
-                
-                <div class="d-flex align-items-center ms-auto ms-lg-0 order-lg-last">
-                    <button class="btn-cart me-2 me-lg-0" id="btn-open-cart">
-                        <img src="./src/assets/cart.svg" alt="Carrito" class="me-2">
-                        <span class="cart-counter" id="cart-badge">0</span>                        
-                    </button>
+                <div class="row w-100 align-items-center g-2 mx-auto">
+                    <!-- Logo / Marca -->
+                    <div class="col-6 col-lg-3 d-flex align-items-center p-0">
+                        <a class="navbar-brand d-flex align-items-center m-0" href="#">
+                            <img src="./src/assets/Logo.png" alt="Scorpion Logo" width="30" height="30" class="d-inline-block align-text-top me-2" onerror="this.style.display='none'">
+                            Scorpion
+                        </a>
+                    </div>
 
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                </div>
-                
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <form class="d-flex mx-auto w-50 my-2 my-lg-0" id="search-form" aria-label="Buscar productos">
-                        <input class="form-control me-2" type="search" placeholder="Buscar productos..." id="search-input" aria-label="Campo de búsqueda">class="me-2"></button>
-                    </form>
+                    <!-- Buscador: Abajo en celular (col-12), en el medio en PC (col-lg-6) -->
+                    <div class="col-12 col-lg-6 order-3 order-lg-2 px-0 px-lg-2">
+                        <form class="w-100 m-0" id="search-form" aria-label="Buscar productos">
+                            <input class="form-control" type="search" placeholder="Buscar productos..." id="search-input" aria-label="Campo de búsqueda">
+                        </form>
+                    </div>
+
+                    <!-- Carrito: Arriba a la derecha en celular (col-6), a la derecha en PC (col-lg-3) -->
+                    <div class="col-6 col-lg-3 order-2 order-lg-3 d-flex justify-content-end p-0">
+                        <button class="btn-cart" id="btn-open-cart">
+                            <img src="./src/assets/cart.svg" alt="Carrito" class="me-2">
+                            <span class="cart-counter" id="cart-badge">0</span>                        
+                        </button>
+                    </div>
                 </div>
             </div>
         </nav>
